@@ -1,3 +1,11 @@
+# Run the command
+# heroku run db:migrate
+# after pushing to heroku via the
+# git push heroku master
+# command
+# heroku automatically creates the database, but it still needs to be manually migrated
+# p.s. heroku run is the command that allows you to run console commands on the heroku app
+
 default: &default
     adapter: postgresql
     encoding: unicode
