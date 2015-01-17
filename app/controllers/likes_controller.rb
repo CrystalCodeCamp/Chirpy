@@ -22,16 +22,6 @@ class LikesController < ApplicationController
     end
   end
 
-  # DELETE /likes/1
-  # DELETE /likes/1.json
-  def destroy
-    @like.destroy
-    respond_to do |format|
-      format.html { redirect_to likes_url, notice: 'Like was successfully destroyed.' }
-      format.json { head :no_content }
-    end
-  end
-
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_like
