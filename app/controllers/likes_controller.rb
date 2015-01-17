@@ -1,24 +1,9 @@
 class LikesController < ApplicationController
   before_action :set_like, only: [:show, :edit, :update, :destroy]
 
-  # GET /likes
-  # GET /likes.json
-  def index
-    @likes = Like.all
-  end
-
-  # GET /likes/1
-  # GET /likes/1.json
-  def show
-  end
-
   # GET /likes/new
   def new
     @like = Like.new
-  end
-
-  # GET /likes/1/edit
-  def edit
   end
 
   # POST /likes
@@ -32,20 +17,6 @@ class LikesController < ApplicationController
         format.json { render :show, status: :created, location: @like }
       else
         format.html { render :new }
-        format.json { render json: @like.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # PATCH/PUT /likes/1
-  # PATCH/PUT /likes/1.json
-  def update
-    respond_to do |format|
-      if @like.update(like_params)
-        format.html { redirect_to @like, notice: 'Like was successfully updated.' }
-        format.json { render :show, status: :ok, location: @like }
-      else
-        format.html { render :edit }
         format.json { render json: @like.errors, status: :unprocessable_entity }
       end
     end
