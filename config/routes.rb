@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root 'chirps#index'
 
   resources :chirps do
-    resources :likes
+    resources :likes, only: [:new, :create, :destroy]
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
