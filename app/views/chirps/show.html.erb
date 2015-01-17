@@ -3,6 +3,8 @@
 <p>
   <strong>Text:</strong>
   <%= @chirp.text %>
+  <strong>Likes:</strong>
+  <%= @chirp.likes.count %>
 </p>
 
 <%= link_to 'Like', new_chirp_like_path(@chirp) %> |
