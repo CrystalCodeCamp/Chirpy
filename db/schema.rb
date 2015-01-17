@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20150112004717) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "chirps", force: true do |t|
     t.string   "text"
     t.datetime "created_at"
@@ -25,6 +28,6 @@ ActiveRecord::Schema.define(version: 20150112004717) do
     t.datetime "updated_at"
   end
 
-  add_index "likes", ["chirp_id"], name: "index_likes_on_chirp_id"
+  add_index "likes", ["chirp_id"], name: "index_likes_on_chirp_id", using: :btree
 
 end
