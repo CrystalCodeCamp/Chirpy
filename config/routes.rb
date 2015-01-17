@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   root 'chirps#index'
 
-  resources :chirps do
+  resources :chirps, except: [:edit, :update] do
     resources :likes, only: [:new, :create]
   end
 

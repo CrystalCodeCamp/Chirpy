@@ -17,10 +17,6 @@ class ChirpsController < ApplicationController
     @chirp = Chirp.new
   end
 
-  # GET /chirps/1/edit
-  def edit
-  end
-
   # POST /chirps
   # POST /chirps.json
   def create
@@ -32,20 +28,6 @@ class ChirpsController < ApplicationController
         format.json { render :show, status: :created, location: @chirp }
       else
         format.html { render :new }
-        format.json { render json: @chirp.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # PATCH/PUT /chirps/1
-  # PATCH/PUT /chirps/1.json
-  def update
-    respond_to do |format|
-      if @chirp.update(chirp_params)
-        format.html { redirect_to @chirp, notice: 'Chirp was successfully updated.' }
-        format.json { render :show, status: :ok, location: @chirp }
-      else
-        format.html { render :edit }
         format.json { render json: @chirp.errors, status: :unprocessable_entity }
       end
     end
