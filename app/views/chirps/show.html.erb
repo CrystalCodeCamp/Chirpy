@@ -5,5 +5,6 @@
   <%= @chirp.text %>
 </p>
 
+<%= link_to 'Like', new_chirp_like_path(@chirp) %> |
 <%= link_to 'Edit', edit_chirp_path(@chirp) %> |
 <%= link_to 'Back', chirps_path %>
